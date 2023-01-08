@@ -15,11 +15,10 @@ function palindrome(str) {
    const Fstr = filtre(str);
 
     for(let i = 1 ; i <= Fstr.length ; i++){
-      if (Fstr[Fstr.length-i] != Fstr[i-1]){
-        return false;
+       if (Fstr[Fstr.length-i] != Fstr[i-1]){
+         return false;
       }
-      return true;
     }
-    
+    return true;
 }
-console.log(palindrome("_eye"));
+console.log(palindrome("eye"));
