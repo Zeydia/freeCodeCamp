@@ -1,22 +1,25 @@
 function palindrome(str) {
     function filtre(str){
-      const re = /\w/ ;
+      const re = /[a-z0-9]/ ;
     let Tstr = str.split("");
     let Nstr = []; 
-    for (let i = 0 ; i < str.length ; i++) {
-    if(re.test(str[i])){
-      Nstr.push(str[i]);
+    for (let i = 0 ; i < Tstr.length ; i++) {
+        if(re.test(Tstr[i])){
+            Nstr.push(Tstr[i]);
+        }
     }
-    }
+
     return Nstr;
     }
-  const Fstr = filtre(str);
 
-    for(let i = 1 ; i <= str.length ; i++){
-      if (str[str.length-i] != str[i-1]){
+   const Fstr = filtre(str);
+
+    for(let i = 1 ; i <= Fstr.length ; i++){
+      if (Fstr[Fstr.length-i] != Fstr[i-1]){
         return false;
       }
       return true;
     }
+    
 }
-console.log(palindrome("eye"));
+console.log(palindrome("_eye"));
